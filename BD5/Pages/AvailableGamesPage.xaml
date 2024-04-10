@@ -1,0 +1,44 @@
+﻿<Page x:Class="BD5.Pages.AvailableGamesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BD5.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AvailableGamesPage"  MouseEnter="MainPage_MouseEnter" MouseLeave="MainPage_MouseLeave"
+      Background="{Binding PageBackgroundColor}">
+
+    <Grid Background="#9C90BF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.RowSpan="5" FontFamily="Cascadia Code SemiBol" Margin="5"  MouseEnter="MainPage_MouseEnter" MouseLeave="MainPage_MouseLeave" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding place.nameofcomputer}" Header="Название компьютера" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding games.title}" Header="Название игры" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Данные для заполнения" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiBold" Margin="5"/>
+        <Button x:Name="createButton" Content="Добавить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="4" Grid.Column="1" Margin="5" Click="createButton_Click"/>
+        <Button x:Name="editButton" Content="Изменить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="4" Grid.Column="2" Margin="5" Click="editButton_Click"/>
+        <Button x:Name="deleteButton" Content="Удалить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="4" Grid.Column="3" Margin="5" Click="deleteButton_Click"/>
+
+        <Label Content="Место" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="1" Margin="5"/>
+        <Label Content="Игры" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="2" Margin="5"/>
+
+        <ComboBox x:Name="placeComboBox" DisplayMemberPath="nameofcomputer" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="5" />
+        <ComboBox x:Name="gamesComboBox" DisplayMemberPath="title" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" />
+
+    </Grid>
+</Page>

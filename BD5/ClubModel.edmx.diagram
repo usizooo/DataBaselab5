@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="936f07ffe24c40f5a4af9071409018d4" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="ClubModel.availablegames" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.availableroles" Width="1.5" PointX="13.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.buyers" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.devices" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.extrainformation" Width="1.5" PointX="8.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.games" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.orders" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.place" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.promotion" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.promotionparticipant" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.roles" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.sessionlengths" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.specifications" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.staff" Width="1.5" PointX="11" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.technicalproblems" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.typeofproblem" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubModel.warehouse" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="ClubModel.FK__available__games__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__available__place__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__available__roles__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__available__staff__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__promotion__buyer__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__place__devices_I__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__staff__extrainfo__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__orders__place_ID__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__orders__promotio__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__orders__sessionl__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__place__specifica__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__technical__wareh__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__promotion__promo__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__technical__roles__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__technical__typeo__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubModel.FK__technical__wareh__6754599E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

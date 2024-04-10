@@ -1,0 +1,55 @@
+﻿<Page x:Class="BD5.Pages.PlacePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BD5.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlacePage">
+
+    <Grid Background="#9C90BF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="900"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.RowSpan="8" FontFamily="Cascadia Code SemiBol" Margin="5" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nameofcomputer}" Header="Название компьютера" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding employmentstatus}" Header="Рабочий статус" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding price}" Header="Цена (руб. за мин.)" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding devices.mouse}" Header="Комплект девайсов" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding specifications.processor}" Header="Комплект комплектующих" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Данные для заполнения" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiBold" Margin="5"/>
+        <Button x:Name="createButton" Content="Добавить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="7" Grid.Column="1" Margin="5" Click="createButton_Click"/>
+        <Button x:Name="editButton" Content="Изменить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="7" Grid.Column="2" Margin="5" Click="editButton_Click"/>
+        <Button x:Name="deleteButton" Content="Удалить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="7" Grid.Column="3" Margin="5" Click="deleteButton_Click"/>
+
+        <Label Content="Название компьютера" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="1" Margin="5"/>
+        <Label Content="Рабочий статус" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="2" Margin="5"/>
+        <Label Content="Цена (руб. за мин.)" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="3" Margin="5"/>
+        <Label Content="Девайсы" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="4" Margin="5"/>
+        <Label Content="Комплектующие" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="5" Margin="5"/>
+
+        <TextBox x:Name="nameofcomputerTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="5"/>
+        <ComboBox x:Name="employmentstatusComboBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="5"/>
+        <TextBox x:Name="priceTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="5"/>
+        <ComboBox x:Name="devicesComboBox" DisplayMemberPath="mouse" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"/>
+        <ComboBox x:Name="specificationsComboBox" DisplayMemberPath="processor" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="5" Margin="5"/>
+
+    </Grid>
+</Page>

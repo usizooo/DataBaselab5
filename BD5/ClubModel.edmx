@@ -1,0 +1,1214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ClubModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="availablegames">
+          <Key>
+            <PropertyRef Name="ID_availablegames" />
+          </Key>
+          <Property Name="ID_availablegames" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place_ID" Type="int" Nullable="false" />
+          <Property Name="games_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="availableroles">
+          <Key>
+            <PropertyRef Name="ID_availableroles" />
+          </Key>
+          <Property Name="ID_availableroles" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roles_ID" Type="int" Nullable="false" />
+          <Property Name="staff_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="buyers">
+          <Key>
+            <PropertyRef Name="ID_buyers" />
+          </Key>
+          <Property Name="ID_buyers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nickname" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="devices">
+          <Key>
+            <PropertyRef Name="ID_devices" />
+          </Key>
+          <Property Name="ID_devices" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mouse" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="headphones" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="keyboard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="microphone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="screen" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="extrainformation">
+          <Key>
+            <PropertyRef Name="ID_extrainformation" />
+          </Key>
+          <Property Name="ID_extrainformation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phonenumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="salary" Type="int" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="games">
+          <Key>
+            <PropertyRef Name="ID_games" />
+          </Key>
+          <Property Name="ID_games" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="genre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="ID_orders" />
+          </Key>
+          <Property Name="ID_orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="totalamount" Type="int" Nullable="false" />
+          <Property Name="startime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="endtime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="sessionlengths_ID" Type="int" Nullable="false" />
+          <Property Name="promotion_ID" Type="int" Nullable="false" />
+          <Property Name="place_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="place">
+          <Key>
+            <PropertyRef Name="ID_place" />
+          </Key>
+          <Property Name="ID_place" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="specifications_ID" Type="int" Nullable="false" />
+          <Property Name="nameofcomputer" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="employmentstatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="devices_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="promotion">
+          <Key>
+            <PropertyRef Name="ID_promotion" />
+          </Key>
+          <Property Name="ID_promotion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameofpromotion" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="descriptionofpromotion" Type="varchar" MaxLength="80" />
+          <Property Name="stardate" Type="date" />
+          <Property Name="enddate" Type="date" />
+        </EntityType>
+        <EntityType Name="promotionparticipant">
+          <Key>
+            <PropertyRef Name="ID_promotionparticipant" />
+          </Key>
+          <Property Name="ID_promotionparticipant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buyers_ID" Type="int" Nullable="false" />
+          <Property Name="promotion_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="ID_roles" />
+          </Key>
+          <Property Name="ID_roles" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolename" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sessionlengths">
+          <Key>
+            <PropertyRef Name="ID_sessionlengths" />
+          </Key>
+          <Property Name="ID_sessionlengths" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="timerate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="specifications">
+          <Key>
+            <PropertyRef Name="ID_specifications" />
+          </Key>
+          <Property Name="ID_specifications" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="processor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="motherboard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="computercase" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="videocard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cpucooling" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ram" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datastorage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="powersuppply" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+          </Key>
+          <Property Name="ID_staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="surname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="patronymic" Type="varchar" MaxLength="20" />
+          <Property Name="extrainformation_ID" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="passwd" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="technicalproblems">
+          <Key>
+            <PropertyRef Name="ID_technicalproblems" />
+          </Key>
+          <Property Name="ID_technicalproblems" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="typeofproblem_ID" Type="int" Nullable="false" />
+          <Property Name="descriptionofproblem" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="applicationstatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="place_ID" Type="int" Nullable="false" />
+          <Property Name="roles_ID" Type="int" Nullable="false" />
+          <Property Name="warehouse_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="typeofproblem">
+          <Key>
+            <PropertyRef Name="ID_typeofproblem" />
+          </Key>
+          <Property Name="ID_typeofproblem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="ID_warehouse" />
+          </Key>
+          <Property Name="ID_warehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameofwarehouse" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="processor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="motherboard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="computercase" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="videocard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cpucooling" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ram" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datastorage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="powersuppply" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mouse" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="headphones" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="keyboard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="microphone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="screen" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__available__games__5FB337D6">
+          <End Role="games" Type="Self.games" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availablegames" Type="Self.availablegames" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="games">
+              <PropertyRef Name="ID_games" />
+            </Principal>
+            <Dependent Role="availablegames">
+              <PropertyRef Name="games_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__place__60A75C0F">
+          <End Role="place" Type="Self.place" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availablegames" Type="Self.availablegames" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="availablegames">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__roles__5070F446">
+          <End Role="roles" Type="Self.roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availableroles" Type="Self.availableroles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="ID_roles" />
+            </Principal>
+            <Dependent Role="availableroles">
+              <PropertyRef Name="roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__staff__5165187F">
+          <End Role="staff" Type="Self.staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availableroles" Type="Self.availableroles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="availableroles">
+              <PropertyRef Name="staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__place_ID__70DDC3D8">
+          <End Role="place" Type="Self.place" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__promotio__72C60C4A">
+          <End Role="promotion" Type="Self.promotion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promotion">
+              <PropertyRef Name="ID_promotion" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="promotion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__sessionl__71D1E811">
+          <End Role="sessionlengths" Type="Self.sessionlengths" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sessionlengths">
+              <PropertyRef Name="ID_sessionlengths" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="sessionlengths_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__place__devices_I__5CD6CB2B">
+          <End Role="devices" Type="Self.devices" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="place" Type="Self.place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="devices">
+              <PropertyRef Name="ID_devices" />
+            </Principal>
+            <Dependent Role="place">
+              <PropertyRef Name="devices_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__place__specifica__5BE2A6F2">
+          <End Role="specifications" Type="Self.specifications" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="place" Type="Self.place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="specifications">
+              <PropertyRef Name="ID_specifications" />
+            </Principal>
+            <Dependent Role="place">
+              <PropertyRef Name="specifications_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__promotion__buyer__75A278F5">
+          <End Role="buyers" Type="Self.buyers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="promotionparticipant" Type="Self.promotionparticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="buyers">
+              <PropertyRef Name="ID_buyers" />
+            </Principal>
+            <Dependent Role="promotionparticipant">
+              <PropertyRef Name="buyers_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__promotion__promo__76969D2E">
+          <End Role="promotion" Type="Self.promotion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="promotionparticipant" Type="Self.promotionparticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promotion">
+              <PropertyRef Name="ID_promotion" />
+            </Principal>
+            <Dependent Role="promotionparticipant">
+              <PropertyRef Name="promotion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__staff__extrainfo__4D94879B">
+          <End Role="extrainformation" Type="Self.extrainformation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="staff" Type="Self.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="extrainformation">
+              <PropertyRef Name="ID_extrainformation" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="extrainformation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__roles__68487DD7">
+          <End Role="roles" Type="Self.roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="ID_roles" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__typeo__66603565">
+          <End Role="typeofproblem" Type="Self.typeofproblem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeofproblem">
+              <PropertyRef Name="ID_typeofproblem" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="typeofproblem_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__wareh__656C112C">
+          <End Role="place" Type="Self.place" Multiplicity="1" />
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__wareh__6754599E">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="ID_warehouse" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="warehouse_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ClubModelContainer">
+          <EntitySet Name="availablegames" EntityType="Self.availablegames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="availableroles" EntityType="Self.availableroles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="buyers" EntityType="Self.buyers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="devices" EntityType="Self.devices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="extrainformation" EntityType="Self.extrainformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="games" EntityType="Self.games" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="place" EntityType="Self.place" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="promotion" EntityType="Self.promotion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="promotionparticipant" EntityType="Self.promotionparticipant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sessionlengths" EntityType="Self.sessionlengths" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="specifications" EntityType="Self.specifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="technicalproblems" EntityType="Self.technicalproblems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="typeofproblem" EntityType="Self.typeofproblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__available__games__5FB337D6" Association="Self.FK__available__games__5FB337D6">
+            <End Role="games" EntitySet="games" />
+            <End Role="availablegames" EntitySet="availablegames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__place__60A75C0F" Association="Self.FK__available__place__60A75C0F">
+            <End Role="place" EntitySet="place" />
+            <End Role="availablegames" EntitySet="availablegames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__roles__5070F446" Association="Self.FK__available__roles__5070F446">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="availableroles" EntitySet="availableroles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__staff__5165187F" Association="Self.FK__available__staff__5165187F">
+            <End Role="staff" EntitySet="staff" />
+            <End Role="availableroles" EntitySet="availableroles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__place_ID__70DDC3D8" Association="Self.FK__orders__place_ID__70DDC3D8">
+            <End Role="place" EntitySet="place" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__promotio__72C60C4A" Association="Self.FK__orders__promotio__72C60C4A">
+            <End Role="promotion" EntitySet="promotion" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__sessionl__71D1E811" Association="Self.FK__orders__sessionl__71D1E811">
+            <End Role="sessionlengths" EntitySet="sessionlengths" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__place__devices_I__5CD6CB2B" Association="Self.FK__place__devices_I__5CD6CB2B">
+            <End Role="devices" EntitySet="devices" />
+            <End Role="place" EntitySet="place" />
+          </AssociationSet>
+          <AssociationSet Name="FK__place__specifica__5BE2A6F2" Association="Self.FK__place__specifica__5BE2A6F2">
+            <End Role="specifications" EntitySet="specifications" />
+            <End Role="place" EntitySet="place" />
+          </AssociationSet>
+          <AssociationSet Name="FK__promotion__buyer__75A278F5" Association="Self.FK__promotion__buyer__75A278F5">
+            <End Role="buyers" EntitySet="buyers" />
+            <End Role="promotionparticipant" EntitySet="promotionparticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__promotion__promo__76969D2E" Association="Self.FK__promotion__promo__76969D2E">
+            <End Role="promotion" EntitySet="promotion" />
+            <End Role="promotionparticipant" EntitySet="promotionparticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__staff__extrainfo__4D94879B" Association="Self.FK__staff__extrainfo__4D94879B">
+            <End Role="extrainformation" EntitySet="extrainformation" />
+            <End Role="staff" EntitySet="staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__roles__68487DD7" Association="Self.FK__technical__roles__68487DD7">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__typeo__66603565" Association="Self.FK__technical__typeo__66603565">
+            <End Role="typeofproblem" EntitySet="typeofproblem" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__wareh__656C112C" Association="Self.FK__technical__wareh__656C112C">
+            <End Role="place" EntitySet="place" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__wareh__6754599E" Association="Self.FK__technical__wareh__6754599E">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="availablegames">
+          <Key>
+            <PropertyRef Name="ID_availablegames" />
+          </Key>
+          <Property Name="ID_availablegames" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place_ID" Type="Int32" Nullable="false" />
+          <Property Name="games_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="games" Relationship="Self.FK__available__games__5FB337D6" FromRole="availablegames" ToRole="games" />
+          <NavigationProperty Name="place" Relationship="Self.FK__available__place__60A75C0F" FromRole="availablegames" ToRole="place" />
+        </EntityType>
+        <EntityType Name="availableroles">
+          <Key>
+            <PropertyRef Name="ID_availableroles" />
+          </Key>
+          <Property Name="ID_availableroles" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roles_ID" Type="Int32" Nullable="false" />
+          <Property Name="staff_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="roles" Relationship="Self.FK__available__roles__5070F446" FromRole="availableroles" ToRole="roles" />
+          <NavigationProperty Name="staff" Relationship="Self.FK__available__staff__5165187F" FromRole="availableroles" ToRole="staff" />
+        </EntityType>
+        <EntityType Name="buyers">
+          <Key>
+            <PropertyRef Name="ID_buyers" />
+          </Key>
+          <Property Name="ID_buyers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="promotionparticipant" Relationship="Self.FK__promotion__buyer__75A278F5" FromRole="buyers" ToRole="promotionparticipant" />
+        </EntityType>
+        <EntityType Name="devices">
+          <Key>
+            <PropertyRef Name="ID_devices" />
+          </Key>
+          <Property Name="ID_devices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="headphones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="keyboard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="microphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="screen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="place" Relationship="Self.FK__place__devices_I__5CD6CB2B" FromRole="devices" ToRole="place" />
+        </EntityType>
+        <EntityType Name="extrainformation">
+          <Key>
+            <PropertyRef Name="ID_extrainformation" />
+          </Key>
+          <Property Name="ID_extrainformation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phonenumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="staff" Relationship="Self.FK__staff__extrainfo__4D94879B" FromRole="extrainformation" ToRole="staff" />
+        </EntityType>
+        <EntityType Name="games">
+          <Key>
+            <PropertyRef Name="ID_games" />
+          </Key>
+          <Property Name="ID_games" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="availablegames" Relationship="Self.FK__available__games__5FB337D6" FromRole="games" ToRole="availablegames" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="ID_orders" />
+          </Key>
+          <Property Name="ID_orders" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="totalamount" Type="Int32" Nullable="false" />
+          <Property Name="startime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="endtime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="sessionlengths_ID" Type="Int32" Nullable="false" />
+          <Property Name="promotion_ID" Type="Int32" Nullable="false" />
+          <Property Name="place_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="place" Relationship="Self.FK__orders__place_ID__70DDC3D8" FromRole="orders" ToRole="place" />
+          <NavigationProperty Name="promotion" Relationship="Self.FK__orders__promotio__72C60C4A" FromRole="orders" ToRole="promotion" />
+          <NavigationProperty Name="sessionlengths" Relationship="Self.FK__orders__sessionl__71D1E811" FromRole="orders" ToRole="sessionlengths" />
+        </EntityType>
+        <EntityType Name="place">
+          <Key>
+            <PropertyRef Name="ID_place" />
+          </Key>
+          <Property Name="ID_place" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="specifications_ID" Type="Int32" Nullable="false" />
+          <Property Name="nameofcomputer" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employmentstatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="devices_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="availablegames" Relationship="Self.FK__available__place__60A75C0F" FromRole="place" ToRole="availablegames" />
+          <NavigationProperty Name="devices" Relationship="Self.FK__place__devices_I__5CD6CB2B" FromRole="place" ToRole="devices" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__place_ID__70DDC3D8" FromRole="place" ToRole="orders" />
+          <NavigationProperty Name="specifications" Relationship="Self.FK__place__specifica__5BE2A6F2" FromRole="place" ToRole="specifications" />
+          <NavigationProperty Name="technicalproblems" Relationship="Self.FK__technical__wareh__656C112C" FromRole="place" ToRole="technicalproblems" />
+        </EntityType>
+        <EntityType Name="promotion">
+          <Key>
+            <PropertyRef Name="ID_promotion" />
+          </Key>
+          <Property Name="ID_promotion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameofpromotion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descriptionofpromotion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="stardate" Type="DateTime" Precision="0" />
+          <Property Name="enddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__promotio__72C60C4A" FromRole="promotion" ToRole="orders" />
+          <NavigationProperty Name="promotionparticipant" Relationship="Self.FK__promotion__promo__76969D2E" FromRole="promotion" ToRole="promotionparticipant" />
+        </EntityType>
+        <EntityType Name="promotionparticipant">
+          <Key>
+            <PropertyRef Name="ID_promotionparticipant" />
+          </Key>
+          <Property Name="ID_promotionparticipant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buyers_ID" Type="Int32" Nullable="false" />
+          <Property Name="promotion_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="buyers" Relationship="Self.FK__promotion__buyer__75A278F5" FromRole="promotionparticipant" ToRole="buyers" />
+          <NavigationProperty Name="promotion" Relationship="Self.FK__promotion__promo__76969D2E" FromRole="promotionparticipant" ToRole="promotion" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="ID_roles" />
+          </Key>
+          <Property Name="ID_roles" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="availableroles" Relationship="Self.FK__available__roles__5070F446" FromRole="roles" ToRole="availableroles" />
+          <NavigationProperty Name="technicalproblems" Relationship="Self.FK__technical__roles__68487DD7" FromRole="roles" ToRole="technicalproblems" />
+        </EntityType>
+        <EntityType Name="sessionlengths">
+          <Key>
+            <PropertyRef Name="ID_sessionlengths" />
+          </Key>
+          <Property Name="ID_sessionlengths" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timerate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__sessionl__71D1E811" FromRole="sessionlengths" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="specifications">
+          <Key>
+            <PropertyRef Name="ID_specifications" />
+          </Key>
+          <Property Name="ID_specifications" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="processor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="motherboard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="computercase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="videocard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cpucooling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ram" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datastorage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="powersuppply" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="place" Relationship="Self.FK__place__specifica__5BE2A6F2" FromRole="specifications" ToRole="place" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+          </Key>
+          <Property Name="ID_staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="extrainformation_ID" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="availableroles" Relationship="Self.FK__available__staff__5165187F" FromRole="staff" ToRole="availableroles" />
+          <NavigationProperty Name="extrainformation" Relationship="Self.FK__staff__extrainfo__4D94879B" FromRole="staff" ToRole="extrainformation" />
+        </EntityType>
+        <EntityType Name="technicalproblems">
+          <Key>
+            <PropertyRef Name="ID_technicalproblems" />
+          </Key>
+          <Property Name="ID_technicalproblems" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typeofproblem_ID" Type="Int32" Nullable="false" />
+          <Property Name="descriptionofproblem" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="applicationstatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="place_ID" Type="Int32" Nullable="false" />
+          <Property Name="roles_ID" Type="Int32" Nullable="false" />
+          <Property Name="warehouse_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="place" Relationship="Self.FK__technical__wareh__656C112C" FromRole="technicalproblems" ToRole="place" />
+          <NavigationProperty Name="roles" Relationship="Self.FK__technical__roles__68487DD7" FromRole="technicalproblems" ToRole="roles" />
+          <NavigationProperty Name="typeofproblem" Relationship="Self.FK__technical__typeo__66603565" FromRole="technicalproblems" ToRole="typeofproblem" />
+          <NavigationProperty Name="warehouse" Relationship="Self.FK__technical__wareh__6754599E" FromRole="technicalproblems" ToRole="warehouse" />
+        </EntityType>
+        <EntityType Name="typeofproblem">
+          <Key>
+            <PropertyRef Name="ID_typeofproblem" />
+          </Key>
+          <Property Name="ID_typeofproblem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="technicalproblems" Relationship="Self.FK__technical__typeo__66603565" FromRole="typeofproblem" ToRole="technicalproblems" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="ID_warehouse" />
+          </Key>
+          <Property Name="ID_warehouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameofwarehouse" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="processor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="motherboard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="computercase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="videocard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cpucooling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ram" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datastorage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="powersuppply" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="headphones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="keyboard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="microphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="screen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="technicalproblems" Relationship="Self.FK__technical__wareh__6754599E" FromRole="warehouse" ToRole="technicalproblems" />
+        </EntityType>
+        <Association Name="FK__available__games__5FB337D6">
+          <End Role="games" Type="Self.games" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availablegames" Type="Self.availablegames" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="games">
+              <PropertyRef Name="ID_games" />
+            </Principal>
+            <Dependent Role="availablegames">
+              <PropertyRef Name="games_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__place__60A75C0F">
+          <End Role="place" Type="Self.place" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availablegames" Type="Self.availablegames" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="availablegames">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__roles__5070F446">
+          <End Role="roles" Type="Self.roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availableroles" Type="Self.availableroles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="ID_roles" />
+            </Principal>
+            <Dependent Role="availableroles">
+              <PropertyRef Name="roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__available__staff__5165187F">
+          <End Role="staff" Type="Self.staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="availableroles" Type="Self.availableroles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="availableroles">
+              <PropertyRef Name="staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__promotion__buyer__75A278F5">
+          <End Role="buyers" Type="Self.buyers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="promotionparticipant" Type="Self.promotionparticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="buyers">
+              <PropertyRef Name="ID_buyers" />
+            </Principal>
+            <Dependent Role="promotionparticipant">
+              <PropertyRef Name="buyers_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__place__devices_I__5CD6CB2B">
+          <End Role="devices" Type="Self.devices" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="place" Type="Self.place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="devices">
+              <PropertyRef Name="ID_devices" />
+            </Principal>
+            <Dependent Role="place">
+              <PropertyRef Name="devices_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__staff__extrainfo__4D94879B">
+          <End Role="extrainformation" Type="Self.extrainformation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="staff" Type="Self.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="extrainformation">
+              <PropertyRef Name="ID_extrainformation" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="extrainformation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__place_ID__70DDC3D8">
+          <End Role="place" Type="Self.place" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__promotio__72C60C4A">
+          <End Role="promotion" Type="Self.promotion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promotion">
+              <PropertyRef Name="ID_promotion" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="promotion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__sessionl__71D1E811">
+          <End Role="sessionlengths" Type="Self.sessionlengths" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sessionlengths">
+              <PropertyRef Name="ID_sessionlengths" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="sessionlengths_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__place__specifica__5BE2A6F2">
+          <End Role="specifications" Type="Self.specifications" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="place" Type="Self.place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="specifications">
+              <PropertyRef Name="ID_specifications" />
+            </Principal>
+            <Dependent Role="place">
+              <PropertyRef Name="specifications_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__wareh__656C112C">
+          <End Role="place" Type="Self.place" Multiplicity="1" />
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="ID_place" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="place_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__promotion__promo__76969D2E">
+          <End Role="promotion" Type="Self.promotion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="promotionparticipant" Type="Self.promotionparticipant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promotion">
+              <PropertyRef Name="ID_promotion" />
+            </Principal>
+            <Dependent Role="promotionparticipant">
+              <PropertyRef Name="promotion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__roles__68487DD7">
+          <End Role="roles" Type="Self.roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="ID_roles" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__typeo__66603565">
+          <End Role="typeofproblem" Type="Self.typeofproblem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeofproblem">
+              <PropertyRef Name="ID_typeofproblem" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="typeofproblem_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__technical__wareh__6754599E">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="technicalproblems" Type="Self.technicalproblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="ID_warehouse" />
+            </Principal>
+            <Dependent Role="technicalproblems">
+              <PropertyRef Name="warehouse_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClubEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="availablegames" EntityType="Self.availablegames" />
+          <EntitySet Name="availableroles" EntityType="Self.availableroles" />
+          <EntitySet Name="buyers" EntityType="Self.buyers" />
+          <EntitySet Name="devices" EntityType="Self.devices" />
+          <EntitySet Name="extrainformation" EntityType="Self.extrainformation" />
+          <EntitySet Name="games" EntityType="Self.games" />
+          <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="place" EntityType="Self.place" />
+          <EntitySet Name="promotion" EntityType="Self.promotion" />
+          <EntitySet Name="promotionparticipant" EntityType="Self.promotionparticipant" />
+          <EntitySet Name="roles" EntityType="Self.roles" />
+          <EntitySet Name="sessionlengths" EntityType="Self.sessionlengths" />
+          <EntitySet Name="specifications" EntityType="Self.specifications" />
+          <EntitySet Name="staff" EntityType="Self.staff" />
+          <EntitySet Name="technicalproblems" EntityType="Self.technicalproblems" />
+          <EntitySet Name="typeofproblem" EntityType="Self.typeofproblem" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" />
+          <AssociationSet Name="FK__available__games__5FB337D6" Association="Self.FK__available__games__5FB337D6">
+            <End Role="games" EntitySet="games" />
+            <End Role="availablegames" EntitySet="availablegames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__place__60A75C0F" Association="Self.FK__available__place__60A75C0F">
+            <End Role="place" EntitySet="place" />
+            <End Role="availablegames" EntitySet="availablegames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__roles__5070F446" Association="Self.FK__available__roles__5070F446">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="availableroles" EntitySet="availableroles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__available__staff__5165187F" Association="Self.FK__available__staff__5165187F">
+            <End Role="staff" EntitySet="staff" />
+            <End Role="availableroles" EntitySet="availableroles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__promotion__buyer__75A278F5" Association="Self.FK__promotion__buyer__75A278F5">
+            <End Role="buyers" EntitySet="buyers" />
+            <End Role="promotionparticipant" EntitySet="promotionparticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__place__devices_I__5CD6CB2B" Association="Self.FK__place__devices_I__5CD6CB2B">
+            <End Role="devices" EntitySet="devices" />
+            <End Role="place" EntitySet="place" />
+          </AssociationSet>
+          <AssociationSet Name="FK__staff__extrainfo__4D94879B" Association="Self.FK__staff__extrainfo__4D94879B">
+            <End Role="extrainformation" EntitySet="extrainformation" />
+            <End Role="staff" EntitySet="staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__place_ID__70DDC3D8" Association="Self.FK__orders__place_ID__70DDC3D8">
+            <End Role="place" EntitySet="place" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__promotio__72C60C4A" Association="Self.FK__orders__promotio__72C60C4A">
+            <End Role="promotion" EntitySet="promotion" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__sessionl__71D1E811" Association="Self.FK__orders__sessionl__71D1E811">
+            <End Role="sessionlengths" EntitySet="sessionlengths" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__place__specifica__5BE2A6F2" Association="Self.FK__place__specifica__5BE2A6F2">
+            <End Role="specifications" EntitySet="specifications" />
+            <End Role="place" EntitySet="place" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__wareh__656C112C" Association="Self.FK__technical__wareh__656C112C">
+            <End Role="place" EntitySet="place" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__promotion__promo__76969D2E" Association="Self.FK__promotion__promo__76969D2E">
+            <End Role="promotion" EntitySet="promotion" />
+            <End Role="promotionparticipant" EntitySet="promotionparticipant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__roles__68487DD7" Association="Self.FK__technical__roles__68487DD7">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__typeo__66603565" Association="Self.FK__technical__typeo__66603565">
+            <End Role="typeofproblem" EntitySet="typeofproblem" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__technical__wareh__6754599E" Association="Self.FK__technical__wareh__6754599E">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="technicalproblems" EntitySet="technicalproblems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ClubModelContainer" CdmEntityContainer="ClubEntities">
+          <EntitySetMapping Name="availablegames">
+            <EntityTypeMapping TypeName="ClubModel.availablegames">
+              <MappingFragment StoreEntitySet="availablegames">
+                <ScalarProperty Name="ID_availablegames" ColumnName="ID_availablegames" />
+                <ScalarProperty Name="place_ID" ColumnName="place_ID" />
+                <ScalarProperty Name="games_ID" ColumnName="games_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="availableroles">
+            <EntityTypeMapping TypeName="ClubModel.availableroles">
+              <MappingFragment StoreEntitySet="availableroles">
+                <ScalarProperty Name="ID_availableroles" ColumnName="ID_availableroles" />
+                <ScalarProperty Name="roles_ID" ColumnName="roles_ID" />
+                <ScalarProperty Name="staff_ID" ColumnName="staff_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="buyers">
+            <EntityTypeMapping TypeName="ClubModel.buyers">
+              <MappingFragment StoreEntitySet="buyers">
+                <ScalarProperty Name="ID_buyers" ColumnName="ID_buyers" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="devices">
+            <EntityTypeMapping TypeName="ClubModel.devices">
+              <MappingFragment StoreEntitySet="devices">
+                <ScalarProperty Name="ID_devices" ColumnName="ID_devices" />
+                <ScalarProperty Name="mouse" ColumnName="mouse" />
+                <ScalarProperty Name="headphones" ColumnName="headphones" />
+                <ScalarProperty Name="keyboard" ColumnName="keyboard" />
+                <ScalarProperty Name="microphone" ColumnName="microphone" />
+                <ScalarProperty Name="screen" ColumnName="screen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="extrainformation">
+            <EntityTypeMapping TypeName="ClubModel.extrainformation">
+              <MappingFragment StoreEntitySet="extrainformation">
+                <ScalarProperty Name="ID_extrainformation" ColumnName="ID_extrainformation" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="games">
+            <EntityTypeMapping TypeName="ClubModel.games">
+              <MappingFragment StoreEntitySet="games">
+                <ScalarProperty Name="ID_games" ColumnName="ID_games" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="ClubModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="ID_orders" ColumnName="ID_orders" />
+                <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+                <ScalarProperty Name="startime" ColumnName="startime" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="sessionlengths_ID" ColumnName="sessionlengths_ID" />
+                <ScalarProperty Name="promotion_ID" ColumnName="promotion_ID" />
+                <ScalarProperty Name="place_ID" ColumnName="place_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="place">
+            <EntityTypeMapping TypeName="ClubModel.place">
+              <MappingFragment StoreEntitySet="place">
+                <ScalarProperty Name="ID_place" ColumnName="ID_place" />
+                <ScalarProperty Name="specifications_ID" ColumnName="specifications_ID" />
+                <ScalarProperty Name="nameofcomputer" ColumnName="nameofcomputer" />
+                <ScalarProperty Name="employmentstatus" ColumnName="employmentstatus" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="devices_ID" ColumnName="devices_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promotion">
+            <EntityTypeMapping TypeName="ClubModel.promotion">
+              <MappingFragment StoreEntitySet="promotion">
+                <ScalarProperty Name="ID_promotion" ColumnName="ID_promotion" />
+                <ScalarProperty Name="nameofpromotion" ColumnName="nameofpromotion" />
+                <ScalarProperty Name="descriptionofpromotion" ColumnName="descriptionofpromotion" />
+                <ScalarProperty Name="stardate" ColumnName="stardate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promotionparticipant">
+            <EntityTypeMapping TypeName="ClubModel.promotionparticipant">
+              <MappingFragment StoreEntitySet="promotionparticipant">
+                <ScalarProperty Name="ID_promotionparticipant" ColumnName="ID_promotionparticipant" />
+                <ScalarProperty Name="buyers_ID" ColumnName="buyers_ID" />
+                <ScalarProperty Name="promotion_ID" ColumnName="promotion_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="ClubModel.roles">
+              <MappingFragment StoreEntitySet="roles">
+                <ScalarProperty Name="ID_roles" ColumnName="ID_roles" />
+                <ScalarProperty Name="rolename" ColumnName="rolename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sessionlengths">
+            <EntityTypeMapping TypeName="ClubModel.sessionlengths">
+              <MappingFragment StoreEntitySet="sessionlengths">
+                <ScalarProperty Name="ID_sessionlengths" ColumnName="ID_sessionlengths" />
+                <ScalarProperty Name="timerate" ColumnName="timerate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="specifications">
+            <EntityTypeMapping TypeName="ClubModel.specifications">
+              <MappingFragment StoreEntitySet="specifications">
+                <ScalarProperty Name="ID_specifications" ColumnName="ID_specifications" />
+                <ScalarProperty Name="processor" ColumnName="processor" />
+                <ScalarProperty Name="motherboard" ColumnName="motherboard" />
+                <ScalarProperty Name="computercase" ColumnName="computercase" />
+                <ScalarProperty Name="videocard" ColumnName="videocard" />
+                <ScalarProperty Name="cpucooling" ColumnName="cpucooling" />
+                <ScalarProperty Name="ram" ColumnName="ram" />
+                <ScalarProperty Name="datastorage" ColumnName="datastorage" />
+                <ScalarProperty Name="powersuppply" ColumnName="powersuppply" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staff">
+            <EntityTypeMapping TypeName="ClubModel.staff">
+              <MappingFragment StoreEntitySet="staff">
+                <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="extrainformation_ID" ColumnName="extrainformation_ID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="passwd" ColumnName="passwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="technicalproblems">
+            <EntityTypeMapping TypeName="ClubModel.technicalproblems">
+              <MappingFragment StoreEntitySet="technicalproblems">
+                <ScalarProperty Name="ID_technicalproblems" ColumnName="ID_technicalproblems" />
+                <ScalarProperty Name="typeofproblem_ID" ColumnName="typeofproblem_ID" />
+                <ScalarProperty Name="descriptionofproblem" ColumnName="descriptionofproblem" />
+                <ScalarProperty Name="applicationstatus" ColumnName="applicationstatus" />
+                <ScalarProperty Name="place_ID" ColumnName="place_ID" />
+                <ScalarProperty Name="roles_ID" ColumnName="roles_ID" />
+                <ScalarProperty Name="warehouse_ID" ColumnName="warehouse_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="typeofproblem">
+            <EntityTypeMapping TypeName="ClubModel.typeofproblem">
+              <MappingFragment StoreEntitySet="typeofproblem">
+                <ScalarProperty Name="ID_typeofproblem" ColumnName="ID_typeofproblem" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouse">
+            <EntityTypeMapping TypeName="ClubModel.warehouse">
+              <MappingFragment StoreEntitySet="warehouse">
+                <ScalarProperty Name="ID_warehouse" ColumnName="ID_warehouse" />
+                <ScalarProperty Name="nameofwarehouse" ColumnName="nameofwarehouse" />
+                <ScalarProperty Name="processor" ColumnName="processor" />
+                <ScalarProperty Name="motherboard" ColumnName="motherboard" />
+                <ScalarProperty Name="computercase" ColumnName="computercase" />
+                <ScalarProperty Name="videocard" ColumnName="videocard" />
+                <ScalarProperty Name="cpucooling" ColumnName="cpucooling" />
+                <ScalarProperty Name="ram" ColumnName="ram" />
+                <ScalarProperty Name="datastorage" ColumnName="datastorage" />
+                <ScalarProperty Name="powersuppply" ColumnName="powersuppply" />
+                <ScalarProperty Name="mouse" ColumnName="mouse" />
+                <ScalarProperty Name="headphones" ColumnName="headphones" />
+                <ScalarProperty Name="keyboard" ColumnName="keyboard" />
+                <ScalarProperty Name="microphone" ColumnName="microphone" />
+                <ScalarProperty Name="screen" ColumnName="screen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

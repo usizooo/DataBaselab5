@@ -1,0 +1,70 @@
+﻿<Page x:Class="BD5.Pages.StaffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BD5.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StaffPage">
+
+    <Grid Background="#9C90BF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1000"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="Auto" Width="Auto" Grid.RowSpan="11" Margin="5">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.RowSpan="11" FontFamily="Cascadia Code SemiBol" Margin="5" SelectionChanged="dataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding firstname}" Header="Имя" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding surname}" Header="Фамилия" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding patronymic}" Header="Отчество" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding extrainformation.phonenumber}" Header="Номер телефона" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding extrainformation.salary}" Header="Зарплата" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding extrainformation.mail}" Header="Почта" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding username}" Header="Логин" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding passwd}" Header="Пароль" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <Label Content="Данные для заполнения" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiBold" Margin="5"/>
+        
+        <Button x:Name="createButton" Content="Добавить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="10" Grid.Column="1" Margin="5" Click="createButton_Click"/>
+        <Button x:Name="editButton" Content="Изменить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="10" Grid.Column="2" Margin="5" Click="editButton_Click"/>
+        <Button x:Name="deleteButton" Content="Удалить" FontFamily="Cascadia Code SemiBold" Foreground="White" Grid.Row ="10" Grid.Column="3" Margin="5" Click="deleteButton_Click"/>
+
+        <Label Content="Имя" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="1" Margin="5"/>
+        <Label Content="Фамилия" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="2" Margin="5"/>
+        <Label Content="Отчество" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="3" Margin="5"/>
+        <Label Content="Номер телефона" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="4" Margin="5"/>
+        <Label Content="Зарплата" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="5" Margin="5"/>
+        <Label Content="Почта" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="6" Margin="5"/>
+        <Label Content="Логин" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="7" Margin="5"/>
+        <Label Content="Пароль" FontFamily="Cascadia Code SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Grid.Column="1" Grid.Row="8" Margin="5"/>
+
+        <TextBox x:Name="nameTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="5"/>
+        <TextBox x:Name="surnameTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="5"/>
+        <TextBox x:Name="patronymicTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="5"/>
+        <TextBox x:Name="phoneNumberTextBox" MaxLength="11" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"/>
+        <TextBox x:Name="salaryTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="5" Margin="5"/>
+        <TextBox x:Name="mailTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6" Margin="5"/>
+        <TextBox x:Name="loginTextBox" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="7" Margin="5"/>
+        <PasswordBox x:Name="passwordBox" PasswordChar="*" FontFamily="Cascadia Code SemiBold" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="8" Margin="5"/>
+
+    </Grid>
+</Page>
